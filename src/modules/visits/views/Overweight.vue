@@ -24,7 +24,7 @@ const registerPatient = async (evt) => {
     method: "POST",
     data: {...registrationStore}
   })
-  console.log('error', error)
+  console.log('error', error.value)
   state.loading = false
   if (status.value === 201) {
     Swal.fire({
