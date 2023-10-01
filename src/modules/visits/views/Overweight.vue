@@ -3,10 +3,10 @@
 import FormPage from "@/shared/Pages/FormPage.vue";
 import OverweightForm from "@/shared/components/Forms/OverweightForm.vue";
 import {useRegistrationStore} from "@/shared/stores/registrationStore.js";
-import {useFetch} from "@/shared/composables/Fetch.js";
 import {reactive} from "vue";
 import {useRoute, useRouter} from "vue-router";
 import Swal from "sweetalert2";
+import {useFetch} from "@/shared/composables/Fetch.js";
 
 const registrationStore = useRegistrationStore()
 const state = reactive({
