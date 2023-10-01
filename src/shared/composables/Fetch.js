@@ -6,7 +6,7 @@ import $axios from "@/shared/http/Axios.js";
      console.log('found')
     const response = shallowRef()
     const status = ref(0)
-    // config object which is a child of the response
+    // data object which is a child of the response
     const data = shallowRef()
     // higher level error object
     const error = shallowRef()

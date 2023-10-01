@@ -1,7 +1,14 @@
 import {createRouter, createWebHistory} from "vue-router";
 
 export const routes = [
-
+    {
+        path: "/",
+        name: "patients",
+        meta: {
+            icon: "fa-solid fa-rectangle-list"
+        },
+        component: () =>  import("@/modules/patients/views/Patients.vue")
+    },
     {
         path: "/registration",
         name: "registration",
@@ -62,14 +69,7 @@ export const routes = [
 
         ]
     },
-    {
-        path: "/",
-        name: "patients",
-        meta: {
-            icon: "fa-solid fa-rectangle-list"
-        },
-        component: () =>  import("@/modules/patients/views/Patients.vue")
-    },
+
 
 ]
 
