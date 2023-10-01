@@ -21,7 +21,9 @@ const registerPatient = async (evt) => {
   console.log('hit')
   console.log('is valid', registrationStore.isOverweightFormValid)
   state.loading = true
-  const {status, data, loading} = await useFetch(`/patients/${route.params.patientId}`, {method: "POST", data: {...registrationStore}})
+  const {status, } = await useFetch(`/patients/${route.params.patientId}`, {method: "POST", data: {...registrationStore}})
+  console.log('status', status.value)
+
   state.loading = false
   if (status.value === 201) {
     Swal.fire({
