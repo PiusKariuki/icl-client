@@ -17,14 +17,13 @@ const router = useRouter()
 const route = useRoute()
 
 const registerPatient = async (evt) => {
-  try {
+
     evt.preventDefault()
     state.loading = true
     const {status} = await useFetch(`patients/${route.params.patientId}`, {
       method: "POST",
       data: {...registrationStore}
     })
-    console.log('status', status.value)
 
     state.loading = false
     if (status.value === 201) {
@@ -35,10 +34,6 @@ const registerPatient = async (evt) => {
       await registrationStore.$reset()
       await router.push("/")
     }
-  } catch (e) {
-    console.log('e', e)
-  }
-
 
 }
 

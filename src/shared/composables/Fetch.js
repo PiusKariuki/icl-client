@@ -23,6 +23,8 @@ import $axios from "@/shared/http/Axios.js";
             url,
             ...config
         })
+        console.log('result', result)
+        console.log('config', {...config})
         response.value = result
         status.value = result.status
         data.value = result.data
