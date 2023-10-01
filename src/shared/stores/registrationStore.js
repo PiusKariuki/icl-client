@@ -1,7 +1,7 @@
 import {defineStore} from "pinia";
 
 
-export const useRegistrationStore = defineStore("registration", {
+export const useRegistrationStore = defineStore("registration-store", {
     state: () => ({
         firstName: "",
         lastName: "",
