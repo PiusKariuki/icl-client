@@ -19,16 +19,18 @@ import $axios from "@/shared/http/Axios.js";
 
     try {
         status.value = 0;
+
+        console.log('config', {...config})
         const result = await $axiosInstance.request({
             url,
             ...config
         })
         console.log('result', result)
-        console.log('config', {...config})
         response.value = result
         status.value = result.status
         data.value = result.data
     } catch (e) {
+        console.log('error', error)
         error.value = e;
         responseError.value = e.response?.data;
         status.value = e.response?.status

@@ -18,22 +18,22 @@ const route = useRoute()
 
 const registerPatient = async (evt) => {
 
-    evt.preventDefault()
-    state.loading = true
-    const {status} = await useFetch(`patients/${route.params.patientId}`, {
-      method: "POST",
-      data: {...registrationStore}
+  evt.preventDefault()
+  state.loading = true
+  const {status, error} = await useFetch(`patients/${route.params.patientId}`, {
+    method: "POST",
+    data: {...registrationStore}
+  })
+  console.log('error', error)
+  state.loading = false
+  if (status.value === 201) {
+    Swal.fire({
+      icon: "success",
+      timer: 1000
     })
-
-    state.loading = false
-    if (status.value === 201) {
-      Swal.fire({
-        icon: "success",
-        timer: 1000
-      })
-      await registrationStore.$reset()
-      await router.push("/")
-    }
+    await registrationStore.$reset()
+    await router.push("/")
+  }
 
 }
 
