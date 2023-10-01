@@ -19,9 +19,6 @@ const route = useRoute()
 const registerPatient = async (evt) => {
   try {
     evt.preventDefault()
-    console.log('hit')
-    console.log('is valid', registrationStore.isOverweightFormValid)
-    console.log('is valid', route.params)
     state.loading = true
     const {status} = await useFetch(`patients/${route.params.patientId}`, {
       method: "POST",

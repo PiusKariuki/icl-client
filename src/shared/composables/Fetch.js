@@ -3,6 +3,7 @@ import $axios from "@/shared/http/Axios.js";
 
 
  export async function useFetch(url, config = {}, $axiosInstance = $axios){
+     console.log('found')
     const response = shallowRef()
     const status = ref(0)
     // config object which is a child of the response
