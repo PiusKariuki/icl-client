@@ -22,7 +22,7 @@ const registerPatient = async (evt) => {
   state.loading = true
   const {status, error} = await useFetch(`patients/${route.params.patientId}`, {
     method: "POST",
-    data: {...registrationStore}
+    data: registrationStore.postObject
   })
   console.log('error', error.value)
   state.loading = false
