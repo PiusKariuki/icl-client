@@ -3,7 +3,6 @@ import $axios from "@/shared/http/Axios.js";
 
 
  export async function useFetch(url, config = {}, $axiosInstance = $axios){
-     console.log('found')
     const response = shallowRef()
     const status = ref(0)
     // data object which is a child of the response
@@ -20,17 +19,14 @@ import $axios from "@/shared/http/Axios.js";
     try {
         status.value = 0;
 
-        console.log('config', {...config})
         const result = await $axiosInstance.request({
             url,
             ...config
         })
-        console.log('result', result)
         response.value = result
         status.value = result.status
         data.value = result.data
     } catch (e) {
-        console.log('error', e)
         error.value = e;
         responseError.value = e.response?.data;
         status.value = e.response?.status

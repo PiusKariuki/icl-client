@@ -20,11 +20,10 @@ const registerPatient = async (evt) => {
 
   evt.preventDefault()
   state.loading = true
-  const {status, error} = await useFetch(`patients/${route.params.patientId}`, {
+  const {status} = await useFetch(`patients/${route.params.patientId}`, {
     method: "POST",
     data: registrationStore.postObject
   })
-  console.log('error', error.value)
   state.loading = false
   if (status.value === 201) {
     Swal.fire({
