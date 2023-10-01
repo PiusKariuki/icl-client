@@ -21,9 +21,9 @@ const registerPatient = async (evt) => {
     evt.preventDefault()
     console.log('hit')
     console.log('is valid', registrationStore.isOverweightFormValid)
-    console.log('params', route.query.patientId)
+    console.log('is valid', route.params)
     state.loading = true
-    const {status} = await useFetch(`patients/${route.query.patientId}`, {
+    const {status} = await useFetch(`patients/${route.params.patientId}`, {
       method: "POST",
       data: {...registrationStore}
     })
