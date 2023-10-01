@@ -30,7 +30,7 @@ import $axios from "@/shared/http/Axios.js";
         status.value = result.status
         data.value = result.data
     } catch (e) {
-        console.log('error', error.value)
+        console.log('error', e)
         error.value = e;
         responseError.value = e.response?.data;
         status.value = e.response?.status
