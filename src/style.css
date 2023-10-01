@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: "Nunito", sans-serif;
+}
+
+.customize-table {
+    --easy-table-header-font-size: 14px;
+    --easy-table-body-row-font-size: 15px;
+    --easy-table-body-item-padding: 5px 10px;
+    --easy-table-body-row-height: 50px;
+}
+
+@layer components {
+    .cont {
+        @apply flex flex-col mx-auto px-[15px] lg:px-24 py-[68px] max-w-[1536px] w-full;
+    }
+
+    input {
+        @apply text-primary placeholder:text-primary/70 placeholder:text-lg bg-white focus:outline-0 border-[1px] border-primary/30 w-full
+        rounded-2xl px-4 py-2;
+    }
+
+    label {
+        @apply cursor-pointer font-medium;
+    }
+
+    .primary-btn {
+        @apply bg-info rounded-2xl text-secondary font-semibold capitalize px-6 py-1 h-12 disabled:bg-info/70;
+    }
+
+    .outline-btn {
+        @apply bg-white rounded-2xl text-info font-semibold capitalize px-6 py-1 h-12 border-[1px] border-info
+        hover:bg-info hover:text-white transition duration-150 delay-75;
+    }
+
+}
