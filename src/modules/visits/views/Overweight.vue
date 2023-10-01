@@ -19,7 +19,6 @@ const route = useRoute()
 const registerPatient = async (evt) => {
   evt.preventDefault()
 
-
   state.loading = true
   const {status, data, loading} = await useFetch(`/patients/${route.params.patientId}`, {method: "POST", data: {...registrationStore}})
   state.loading = false

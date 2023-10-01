@@ -68,7 +68,7 @@ const drugOptions = [
     />
     <spinner v-if="loading" :load="loading"/>
 
-    <button :disabled="!isValid" v-else class="primary-btn lg:w-32 md:col-span-2 mt-20 ">Submit</button>
+    <button  v-else class="primary-btn lg:w-32 md:col-span-2 mt-20 ">Submit</button>
   </form>
 </template>
 
